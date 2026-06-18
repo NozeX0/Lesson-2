@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    padding:20px;
+}
+
+section{
+    margin-bottom:40px;
+}
+
+#menu{
+    display:none;
+}
+
+#box{
+    border:1px solid #aaa;
+    padding:15px;
+    min-height:120px;
+}
+
+textarea{
+    width:100%;
+    height:150px;
+}
+
+#resizable{
+    position:relative;
+    width:600px;
+    height:180px;
+    border:2px solid gray;
+    padding:15px;
+    overflow:auto;
+}
+
+#resize-handle{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:18px;
+    height:18px;
+    background:gray;
+    cursor:se-resize;
+}
+
+#colorBox{
+    width:150px;
+    height:150px;
+    border:1px solid black;
+    margin-bottom:20px;
+}
+
+.slider{
+    width:250px;
+}
+</style>
+</head>
+<body>
+
+<h1>Задание 1 - Контекстное меню</h1>
+
+<input id="username-input" placeholder="Введите имя">
+<button id="answerBtn">Добавить</button>
+
+<p>Имя: <span id="username"></span></p>
+
+<button id="myButton">Click me</button>
+
+<ul id="events"></ul>
+
+<div id="menu"></div>
+
+<hr>
+
+<h1>Задание 2 - Ctrl+E / Ctrl+S</h1>
+
+<div id="box">
+Hello my name is Anton.
+Press Ctrl+E to edit text.
+Press Ctrl+S to save text.
+</div>
+
+<hr>
+
+<h1>Задание 3 - Изменение размера блока</h1>
+
+<div id="resizable">
+Hello my name is Anton.
+<div id="resize-handle"></div>
+</div>
+
+<hr>
+
+<h1>Задание 4 - RGB слайдер</h1>
+
+<div id="colorBox"></div>
+
+<div>
+R:
+<input type="range" id="r" class="slider" min="0" max="255" value="35">
+<span id="rVal">35</span>
+</div>
+
+<div>
+G:
+<input type="range" id="g" class="slider" min="0" max="255" value="35">
+<span id="gVal">35</span>
+</div>
+
+<div>
+B:
+<input type="range" id="b" class="slider" min="0" max="255" value="35">
+<span id="bVal">35</span>
+</div>
+
+<script src="dom2.js"></script>
+
+</body>
+</html>

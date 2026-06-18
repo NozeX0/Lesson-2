@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ms</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .col {
+      flex: 1;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    li {
+      padding: 6px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .menu {
+      position: fixed;
+      display: none;
+      flex-direction: column;
+      padding: 8px;
+      border-radius: 10px;
+      min-width: 160px;
+      z-index: 999;
+      transform: scale(0.95);
+      opacity: 0;
+      transition: 0.15s;
+    }
+
+    .menu.show {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .menu button {
+      background: transparent;
+      border: none;
+      text-align: left;
+      padding: 8px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .menu button:hover {
+      background: rgba(0,0,0,0.1);
+    }
+
+    .dark {
+      background: #222;
+      color: white;
+    }
+
+    .light {
+      background: white;
+      color: black;
+      border: 1px solid #ddd;
+    }
+
+    .dark-body {
+      background: #111;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="col">
+      <input id="username-input" type="text" placeholder="What's your name?">
+      <button id="answerBtn">Answer</button>
+      <h2 id="username"></h2>
+    </div>
+
+    <div class="col">
+      <h3>Events:</h3>
+      <ul id="events"></ul>
+    </div>
+
+  </div>
+
+  <button id="myButton">Click me</button>
+
+  <div id="menu" class="menu"></div>
+
+  <script src="lesson2.js"></script>
+
+</body>
+
+</html>

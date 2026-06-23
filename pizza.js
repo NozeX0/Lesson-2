@@ -9,6 +9,15 @@ function ask(question) {
     return new Promise(resolve => rl.question(question, resolve));
 }
 
+const PRODUCTS = {
+    pizza: {
+        name: 'піца'
+    },
+    cola: {
+        name: 'кола'
+    }
+};
+
 (async function () {
     const order = [];
 
@@ -20,12 +29,18 @@ function ask(question) {
         }
 
         if (answer === 'так') {
-            let product = (await ask('Оберіть позицію (кола / піца): ')).toLowerCase();
+            let productKey = (await ask('Оберіть позицію (pizza / cola): ')).toLowerCase();
+
+            if (!PRODUCTS[productKey]) {
+                console.log('Невідомий товар');
+                continue;
+            }
+
             let size = (await ask('Вкажіть розмір (S / M): ')).toUpperCase();
             let price = Number(await ask('Вкажіть ціну: '));
 
             const item = {
-                name: product,
+                product: PRODUCTS[productKey],
                 size: size,
                 price: price
             };
@@ -45,15 +60,17 @@ function ask(question) {
     for (let item of order) {
         total += item.price;
 
-        if (item.name === 'піца') {
+        const name = item.product.name;
+
+        if (name === 'піца') {
             pizzaTotal += item.price;
         }
 
-        if (item.name === 'кола') {
+        if (name === 'кола') {
             colaTotal += item.price;
         }
 
-        const key = `${item.name} ${item.size}`;
+        const key = `${name} ${item.size}`;
         summary[key] = (summary[key] || 0) + 1;
     }
 
